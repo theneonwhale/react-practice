@@ -1,23 +1,69 @@
-import React from 'react';
+import React from 'react'; // it`s not used any more. We are using jsx.
 import ReactDOM from 'react-dom';
+import App from './App';
+// import paintings from './paintings.json';
+// const data = paintings[0];
 
-const elem1 = React.createElement('span', {
-  children: 'Hello World!',
-});
+// const painting = paintings[1];
+// const painting = (
+//   <div>
+//     <img src={imageUrl} alt={title} width="480" />
+//     <h2>{title}</h2>
+//     <p>
+//       Автор: <a href={profileUrl}>{author}</a>
+//     </p>
+//     <p>Цена: {price} кредитов</p>
+//     <p>Доступность: {quantity < 10 ? 'заканчивается' : 'есть в наличии'}</p>
+//     <button type="button">Добавить в корзину</button>
+//   </div>
+// );
 
-const elem2 = React.createElement('span', {
-  children: 'and me',
-});
+// {
+/* <Painting
+  url={painting.url}
+  title={painting.title}
+  authorName={painting.author.tag}
+  authorUrl={painting.author.url}
+  price={painting.price}
+  quantity={painting.quantity}
+/>; */
+// }
 
-const element = React.createElement('div', {
-  a: 5,
-  b: 10,
-  children: [elem1, ' ', elem2],
-});
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
 
-console.log('🚀 ~ file: index.js ~ line 4 ~ element', element);
+//=========================================================
+// const elem1 = React.createElement('span', {
+//   children: 'Hello World!',
+// });
 
-ReactDOM.render(element, document.querySelector('#root'));
+// const elem2 = React.createElement('span', {
+//   children: 'and me',
+// });
+
+// const elem1 = <span>Hello</span>;
+// const elem2 = <span>World!</span>;
+
+// const element = React.createElement('div', {
+//   a: 5,
+//   b: 10,
+//   children: 'Hello world!',
+// });
+
+// const jsxElement = (
+//   <div>
+//     {elem1}
+//     {elem2}
+//   </div>
+// );
+
+// console.log(jsxElement);
+
+// ReactDOM.render(jsxElement, document.querySelector('#root'));
 //==========================================================================
 // import React from 'react';
 // import ReactDOM from 'react-dom';
