@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import defaultImg from './default.jpg';
 
 export default function Painting({
-  url = defaultImg,
+  imageUrl = defaultImg,
   title,
   authorUrl,
   authorName = 'Anonimous',
@@ -13,7 +13,7 @@ export default function Painting({
   // const { url, title, authorUrl, authorName, price, quantity } = props;
   return (
     <div>
-      <img src={url} alt={title} width="480" />
+      <img src={imageUrl} alt={title} width="480" />
       <h2>{title}</h2>
       <p>
         Автор: <a href={authorUrl}>{authorName}</a>
@@ -26,10 +26,10 @@ export default function Painting({
 }
 
 Painting.propTypes = {
-  imageUrl: PropTypes.string,
-  title: PropTypes.string,
-  authorUrl: PropTypes.string,
-  authorName: PropTypes.string,
-  price: PropTypes.number,
-  quantity: PropTypes.number,
+  imageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  authorUrl: PropTypes.string.isRequired,
+  authorName: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
