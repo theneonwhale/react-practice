@@ -1,64 +1,36 @@
-// import Painting from './components/Painting';
-import PaintingList from './components/PaintingList';
-import Section from './components/Section';
+// import Painting from './components/Painting/Painting';
+// import PaintingList from './components/PaintingList';
+// import ColorPicker from './components/ColorPicker/ColorPicker';
+// import Alert from './components/Alert/Alert';
+import Container from './components/Container/Container';
+import Box from './components/Box/Box';
+// import Section from './components/Section';
 
-import paintings from './paintings.json';
+// import paintings from './paintings.json';
+
+// const colorPickerOptions = [
+//   { label: 'red', color: '#F44336' },
+//   { label: 'green', color: '#4CAF50' },
+//   { label: 'blue', color: '#2196F3' },
+//   { label: 'grey', color: '#607D8B' },
+//   { label: 'pink', color: '#E91E63' },
+//   { label: 'indigo', color: '#3F51B5' },
+// ];
 
 export default function App() {
   // const isOnline = false;
   return (
-    <div>
+    <Container>
+      <Box type="small" classNames="big red" styles={{ color: '#fff' }} />
+      <Box type="medium" />
+      <Box type="large" />
+
+      {/* <Alert text="This is the End!" type="success" /> */}
+      {/* <Alert text="This is the End!" type="warning" /> */}
+      {/* <Alert text="This is the End!" type="error" /> */}
+
+      {/* <ColorPicker options={colorPickerOptions} /> */}
       {/* <PaintingList items={paintings} /> */}
-      <Section title="Top of the week">
-        <PaintingList items={paintings} />
-      </Section>
-
-      <Section title="The best">
-        <PaintingList items={paintings} />
-      </Section>
-      {/* {paintings.map(painting => (
-        <Painting
-          key={painting.id}
-          url={painting.url}
-          title={painting.title}
-          authorName={painting.author.tag}
-          authorUrl={painting.author.url}
-          price={painting.price}
-          quantity={painting.quantity}
-        />
-      ))} */}
-      {/* {[1, 2, 3, 4, 5].map(el => (
-        <div>{el}</div>
-      ))} */}
-      {/* {isOnline && 'Online'}
-      {isOnline ? 'Online' : 'Offline'}
-
-      <Painting
-        url={paintings[0].url}
-        title={paintings[0].title}
-        authorName={paintings[0].author.tag}
-        authorUrl={paintings[0].author.url}
-        price={paintings[0].price}
-        quantity={paintings[0].quantity}
-      />
-
-      <Painting
-        url={paintings[1].url}
-        title={paintings[1].title}
-        authorName={paintings[1].author.tag}
-        authorUrl={paintings[1].author.url}
-        price={paintings[1].price}
-        quantity={paintings[1].quantity}
-      />
-
-      <Painting
-        url={paintings[2].url}
-        title={paintings[2].title}
-        authorName={paintings[2].author.tag}
-        authorUrl={paintings[2].author.url}
-        price={paintings[2].price}
-        quantity={paintings[2].quantity}
-      /> */}
-    </div>
+    </Container>
   );
 }

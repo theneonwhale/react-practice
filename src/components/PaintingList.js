@@ -1,5 +1,5 @@
-import Painting from './Painting';
-import PropTypes, { array } from 'prop-types';
+import Painting from './Painting/Painting';
+import PropTypes from 'prop-types';
 
 function PaintingList({ items }) {
   return (

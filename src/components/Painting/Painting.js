@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import s from './Painting.module.css';
 import defaultImg from './default.jpg';
 
 export default function Painting({
@@ -12,7 +13,7 @@ export default function Painting({
   // console.log(props);
   // const { url, title, authorUrl, authorName, price, quantity } = props;
   return (
-    <div>
+    <div className={s.container}>
       <img src={imageUrl} alt={title} width="480" />
       <h2>{title}</h2>
       <p>

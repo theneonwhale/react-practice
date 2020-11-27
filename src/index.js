@@ -1,5 +1,7 @@
 import React from 'react'; // it`s not used any more. We are using jsx.
 import ReactDOM from 'react-dom';
+import 'modern-normalize/modern-normalize.css';
+import './index.css';
 import App from './App';
 // import paintings from './paintings.json';
 // const data = paintings[0];
