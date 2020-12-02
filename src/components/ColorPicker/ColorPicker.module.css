@@ -11,4 +11,10 @@
   width: 40px;
   height: 40px;
   margin: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.optionActive {
+  border: 10px solid gold;
 }
