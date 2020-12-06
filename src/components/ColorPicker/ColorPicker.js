@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-
+import classNames from 'classnames';
 import s from './ColorPicker.module.css';
 
 class ColorPicker extends Component {
   state = {
     activeOptionIdx: 0,
   };
-
   setActiveIdx = index => {
     this.setState({ activeOptionIdx: index });
   };
 
   makeOptionClassName = index => {
-    const optionClasses = [s.option];
-    if (index === this.state.activeOptionIdx) {
-      optionClasses.push(s.optionActive);
-    }
-    return optionClasses.join(' ');
+    return classNames(s.option, {
+      [s.optionActive]: index === this.state.activeOptionIdx,
+    });
+    // console.log(cls);
+    // const optionClasses = [s.option];
+    // if (index === this.state.activeOptionIdx) {
+    //   optionClasses.push(s.optionActive);
+    // }
+    // return optionClasses.join(' ');
   };
 
   render() {
