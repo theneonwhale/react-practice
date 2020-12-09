@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
+import './TodoEditor.scss';
 
 class TodoEditor extends Component {
-  state = { message: '' };
+  state = {
+    message: '',
+  };
 
   handleChange = e => {
     this.setState({ message: e.currentTarget.value });
   };
+
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({ message: e.currentTarget.value });
+
     this.props.onSubmit(this.state.message);
+
     this.setState({ message: '' });
   };
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="TodoEditor" onSubmit={this.handleSubmit}>
         <textarea
+          className="TodoEditor__textarea"
           value={this.state.message}
           onChange={this.handleChange}
-          cols="30"
-          row="10"
         ></textarea>
-        <button type="submit">Add</button>
+        <button type="submit" className="TodoEditor__button">
+          Сохранить
+        </button>
       </form>
     );
   }

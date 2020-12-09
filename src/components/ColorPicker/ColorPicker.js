@@ -1,50 +1,40 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-import s from './ColorPicker.module.css';
+import './ColorPicker.css';
 
-class ColorPicker extends Component {
+class ColorPicker extends PureComponent {
   state = {
     activeOptionIdx: 0,
   };
+
   setActiveIdx = index => {
     this.setState({ activeOptionIdx: index });
   };
 
   makeOptionClassName = index => {
-    return classNames(s.option, {
-      [s.optionActive]: index === this.state.activeOptionIdx,
+    return classNames('ColorPicker__option', {
+      'ColorPicker__option--active': index === this.state.activeOptionIdx,
     });
-    // console.log(cls);
-    // const optionClasses = [s.option];
-    // if (index === this.state.activeOptionIdx) {
-    //   optionClasses.push(s.optionActive);
-    // }
-    // return optionClasses.join(' ');
   };
 
   render() {
     const { activeOptionIdx } = this.state;
     const { options } = this.props;
-
     const { label } = options[activeOptionIdx];
 
     return (
-      <div className={s.container}>
-        <h2 className={s.title}>Color Picker</h2>
-        <p>Chosen color: {label}</p>
+      <div className="ColorPicker">
+        <h2 className="ColorPicker__title">Color Picker</h2>
+        <p>Выбран цвет: {label}</p>
         <div>
-          {this.props.options.map(({ label, color }, index) => {
-            return (
-              <button
-                key={label}
-                className={this.makeOptionClassName(index)}
-                style={{ backgroundColor: color }}
-                onClick={() => {
-                  this.setActiveIdx(index);
-                }}
-              ></button>
-            );
-          })}
+          {options.map(({ label, color }, index) => (
+            <button
+              key={label}
+              className={this.makeOptionClassName(index)}
+              style={{ backgroundColor: color }}
+              onClick={() => this.setActiveIdx(index)}
+            ></button>
+          ))}
         </div>
       </div>
     );
