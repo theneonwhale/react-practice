@@ -5,8 +5,8 @@ import PageHeading from '../components/PageHeading/PageHeading';
 
 export default function BooksView() {
   const { url } = useRouteMatch();
-  const [books, setBooks] = useState(null);
-  console.log(url);
+  const [books, setBooks] = useState([]);
+
   useEffect(() => {
     bookShelfAPI.fetchBooks().then(setBooks);
   }, []);

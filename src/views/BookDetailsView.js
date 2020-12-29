@@ -5,11 +5,7 @@ import * as bookShelfAPI from '../services/bookshelf-api';
 
 export default function BookDetailsView() {
   const { bookId } = useParams();
-  const params = useParams();
-
   const [book, setBook] = useState(null);
-  console.log(bookId);
-  console.log(params);
 
   useEffect(() => {
     bookShelfAPI.fetchBookById(bookId).then(setBook);
