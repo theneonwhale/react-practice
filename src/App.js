@@ -1,6 +1,6 @@
-import { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import AppBar from './components/AppBar/AppBar';
+// import { lazy, Suspense } from 'react';
+// import { Switch, Route } from 'react-router-dom';
+// import AppBar from './components/AppBar/AppBar';
 import Container from './components/Container/Container';
 // import HomeView from './views/HomeView';
 // import AuthorsView from './views/AuthorsView';
@@ -8,22 +8,33 @@ import Container from './components/Container/Container';
 // import BookDetailsView from './views/BookDetailsView';
 // import NotFoundView from './views/NotFoundView';
 // import TableView from './views/TableView';
+import store from './redux/store';
+// import { myAction, myAction2 } from './redux/actions';
+// import Counter from './components/Counter/Counter';
+import CounterClass from './components/Counter/CounterClass';
 
-const HomeView = lazy(() =>
-  import('./views/HomeView.js' /* webpackChunkName: "home-view" */),
-);
-const AuthorsView = lazy(() =>
-  import('./views/AuthorsView.js' /* webpackChunkName: "authors-view" */),
-);
-const BooksView = lazy(() => import('./views/BooksView.js'));
-const BookDetailsView = lazy(() => import('./views/BookDetailsView.js'));
-const NotFoundView = lazy(() => import('./views/NotFoundView.js'));
-const TableView = lazy(() => import('./views/TableView.js'));
+console.log(store);
+// store.dispatch(myAction(5));
+// store.dispatch(myAction(10));
+
+// store.dispatch(myAction2);
+
+// const HomeView = lazy(() =>
+//   import('./views/HomeView.js' /* webpackChunkName: "home-view" */),
+// );
+// const AuthorsView = lazy(() =>
+//   import('./views/AuthorsView.js' /* webpackChunkName: "authors-view" */),
+// );
+// const BooksView = lazy(() => import('./views/BooksView.js'));
+// const BookDetailsView = lazy(() => import('./views/BookDetailsView.js'));
+// const NotFoundView = lazy(() => import('./views/NotFoundView.js'));
+// const TableView = lazy(() => import('./views/TableView.js'));
 
 export default function App() {
   return (
     <Container>
-      <AppBar />
+      <CounterClass />
+      {/* <AppBar />
 
       <Suspense fallback={<h1>ЗАГРУЖАЕМ МАРШРУТ...</h1>}>
         <Switch>
@@ -51,7 +62,7 @@ export default function App() {
             <NotFoundView />
           </Route>
         </Switch>
-      </Suspense>
+      </Suspense> */}
     </Container>
   );
 }
