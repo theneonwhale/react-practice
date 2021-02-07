@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Lexend Mega', sans-serif;
+  text-decoration: none;
+  color: blueviolet;
+}
+
+.item.active {
+  color: tomato;
+}
+
+.item.active svg {
+  color: tomato;
+}
+
+.item:hover,
+.item:focus {
+  background-color: #000000;
+  color: tomato;
+}
+
+.item:hover svg,
+.item:focus svg {
+  color: tomato;
+}
+
+.item svg {
+  margin-right: 10px;
+}
